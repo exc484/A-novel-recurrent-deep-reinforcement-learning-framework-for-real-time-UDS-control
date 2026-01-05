@@ -1,2 +1,4 @@
 # A-novel-recurrent-deep-reinforcement-learning-framework-for-real-time-UDS-control
 Real-time control of urban drainage system for flood and combined sewer overflow mitigation with a novel recurrent deep reinforcement learning framework
+The framework is implemented using pyswmm 0.6.0; swmm_api 0.4.37; tensorflow 2.5.0 as the simulation and control interface, enabling closed-loop interaction between the learning agent and the hydraulic model in real time.
+This work builds upon and is inspired by a rich body of existing research about reinforcement learning applications in urban drainage system control. We appreciate the foundational contributions of previous scholars (https://doi.org/10.1016/j.watres.2023.120912; https://doi.org/10.2166/hydro.2020.080; https://doi.org/10.1021/acsestwater.4c01277). SWMM inp data can be found here (https://github.com/DantEzio/Koopman-Emulator-RL).
