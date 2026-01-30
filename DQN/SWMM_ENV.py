@@ -50,7 +50,7 @@ class SWMM_ENV:
         rgs = RainGages(self.sim)
         states = []
         for _temp in self.config["states"]:
-            if _temp[1] == 'depthN':
+            if _temp[1] == 'depth':
                 states.append(nodes[_temp[0]].depth)
             elif _temp[1] == 'flow':
                 states.append(links[_temp[0]].flow)
@@ -140,4 +140,5 @@ class SWMM_ENV:
             self.sim._model.swmm_close()
         return states,rewards,flooding,CSO2,objective1,objective2,pump1_flow,pump2_flow,pump3_flow,pump4_flow,pump5_flow,pump6_flow,pump7_flow,outfall1_flow,outfall2_flow,outfall3_flow,outfall4_flow,done
         
+
 
