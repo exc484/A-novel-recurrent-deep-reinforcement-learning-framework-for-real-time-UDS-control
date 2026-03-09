@@ -124,7 +124,7 @@ class DQN:
     def load_model(self):
         self.model.load_weights('./model/dqn.h5')
 
-    def perturb_one_by_percent(self, state, noise_percent=0.05, seed=None):
+    def perturb_one_by_percent(self, state, noise_percent=0.2, seed=None):
         """
         Randomly pick one element and add bounded percentage noise to THAT element.
         
@@ -188,4 +188,5 @@ class DQN:
 # data=np.load('C:/Users/Enpei Chen/DQN/Results/101.npy', allow_pickle=True)
 
     
+
         
