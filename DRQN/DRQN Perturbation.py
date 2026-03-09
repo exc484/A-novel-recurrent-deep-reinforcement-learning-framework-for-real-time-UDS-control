@@ -200,7 +200,7 @@ class DQN:
     def load_model(self):
         self.model.load_weights('./model/dqn.h5')
         
-    def perturb_one_by_percent(self, state, noise_percent=0.05, seed=None):
+    def perturb_one_by_percent(self, state, noise_percent=0.2, seed=None):
         """
         Randomly pick one element and add bounded percentage noise to THAT element.
         
@@ -240,6 +240,7 @@ class DQN:
             a = self.choose_action(state_seq,False)
             action = self.action_table[a,:].tolist()
             snext,reward,F,C,O1,O2,P1,P2,P3,P4,P5,P6,P7,f1,f2,f3,f4,done = self.env.step(action)#return states,rewards,flooding,CSO,done
+            snext = self.perturb_one_by_percent(snext, noise_percent)
             self.state_queue.append(snext)
             s = snext
             t += 1
@@ -268,4 +269,5 @@ class DQN:
 # data=np.load('C:/Users/Enpei Chen/DQN/Results/101.npy', allow_pickle=True)
     
     
+
         
